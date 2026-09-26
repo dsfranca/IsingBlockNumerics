@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this package or its numerical certificates, please cite the archived release."
+type: software
+repository-code: "https://github.com/dsfranca/IsingBlockNumerics"
+url: "https://dsfranca.github.io/IsingBlockNumerics/"
+title: "IsingBlockNumerics: Certified finite-block influences for the square-lattice Ising model"
+authors:
+  - family-names: Rouzé
+    given-names: Cambyse
+    affiliation: "Inria, Télécom Paris, LTCI, Institut Polytechnique de Paris, Palaiseau, France"
+  - family-names: França
+    given-names: Daniel Stilck
+    affiliation: "Department of Mathematical Sciences, University of Copenhagen, Denmark"
+version: 1.0.0
+license: MIT
+date-released: 2026-09-26
+abstract: >-
+  Reproducibility package for the Ising block-dynamics example in
+  Rapid mixing of Gibbs samplers via quantum Dobrushin–Shlosman conditions.
+  Exhaustive transfer-matrix computations with explicit roundoff bounds certify
+  positive square-block Dobrushin–Shlosman margins at beta J = 0.35 and 0.36,
+  where the single-site condition fails. Includes source code, certified data,
+  independent verification, figures, and conservative perturbation-window calculations.
+keywords:
+  - Ising model
+  - block dynamics
+  - Dobrushin–Shlosman condition
+  - rapid mixing
+  - reproducible numerics
+  - quantum Gibbs sampling

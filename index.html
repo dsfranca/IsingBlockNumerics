@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Certified finite-block influences for the square-lattice Ising model: source code, data, and reproducible Dobrushin–Shlosman block margins.">
+<title>IsingBlockNumerics · Certified block influences</title>
+<style>
+:root{color-scheme:light;--ink:#162725;--muted:#586965;--accent:#087b75;--line:#dce6e1;--paper:#f8faf7}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Georgia,"Times New Roman",serif}main{max-width:1060px;margin:auto;padding:70px 28px 40px}.eyebrow,.label,nav,footer,.button{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}h1{font-size:clamp(36px,6vw,61px);font-weight:500;line-height:1.12;letter-spacing:-.035em;max-width:880px;margin:0 0 24px}h2{font-size:28px;font-weight:500;line-height:1.3;margin:42px 0 14px}p{margin:0 0 18px}.intro{font-size:21px;max-width:850px;color:#354d46}.authors{color:var(--muted);margin:25px 0}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#064c48}a:focus-visible{outline:3px solid #c99b3b;outline-offset:4px}nav{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 44px}.button{padding:10px 17px;border:1px solid var(--accent);border-radius:4px;text-decoration:none;font-size:14px;font-weight:600;background:var(--accent);color:white}.button.secondary{background:transparent;color:var(--accent)}.button:hover{background:#065b57;color:white}.certificates{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}.certificate{padding:24px 28px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:4px}.label{font-size:13px;letter-spacing:.04em;color:var(--muted)}.margin{font-size:38px;line-height:1.2;margin:12px 0}.certificate p{margin:0;color:var(--muted)}.formula{font-size:20px;font-style:italic}.figure{background:white;border:1px solid var(--line);border-radius:4px;padding:22px 22px 15px;margin:30px 0}.figure img{width:100%;height:auto;display:block}.figure figcaption{font-size:15px;color:var(--muted);padding:12px 8px 0}.resources{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}.resource{padding:19px 0;border-bottom:1px solid var(--line)}.resource a{font-size:20px}.resource p{font-size:16px;color:var(--muted);margin:5px 0 0}.citation{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:20px 0}.small{font-size:15px;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:24px;margin-top:46px;font-size:12px;color:var(--muted)}code{font-size:.84em;background:#eef2ed;padding:2px 4px;border-radius:3px}@media(max-width:640px){main{padding:38px 20px 28px}.intro{font-size:19px}.certificates,.resources{grid-template-columns:1fr}.certificate{padding:22px}.margin{font-size:34px}.figure{padding:7px}h2{font-size:25px}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">IsingBlockNumerics · Reproducible numerical certificates</div>
+<h1>Block influences for the square-lattice Ising model</h1>
+<p class="intro">Two finite-block certificates beyond the single-site Dobrushin condition, with exhaustive boundary searches and explicit roundoff bounds.</p>
+<p class="authors">Cambyse Rouzé &amp; Daniel Stilck França</p>
+<nav aria-label="Main resources">
+<a class="button" href="https://github.com/dsfranca/IsingBlockNumerics">Code &amp; data on GitHub</a>
+<a class="button secondary" href="output/pdf/certification_note.pdf">Read the technical note</a>
+<a class="button secondary" href="#cite">Cite this work</a>
+</nav>
+<h2>Certified block margins</h2>
+<p>For the ferromagnetic Ising model at zero longitudinal field, let <span class="formula">x = βJ</span>. Every translate of an ℓ × ℓ square is updated with rate ℓ<sup>−2</sup>. The exhaustive calculation gives:</p>
+<div class="certificates">
+<article class="certificate"><div class="label">x = 0.35 · 6 × 6 BLOCK</div><div class="margin">κ &gt; 0.0432</div><p>Certified positive block margin.</p></article>
+<article class="certificate"><div class="label">x = 0.36 · 7 × 7 BLOCK</div><div class="margin">κ &gt; 0.0125</div><p>Certified positive block margin.</p></article>
+</div>
+<p>The single-site margin <span class="formula">1 − 2 tanh(2x)</span> is negative at both couplings. These block certificates supply the classical reference for the quantum perturbation result in <em>Rapid mixing of Gibbs samplers via quantum Dobrushin–Shlosman conditions</em>.</p>
+<figure class="figure"><img src="numerical/ising_blocks/ising_block_margins.png" width="1500" height="902" alt="Block margins at couplings 0.30, 0.35, 0.40 and 0.42 for square side lengths 1 through 6. At coupling 0.35, the margin becomes positive at side length 6."><figcaption>Computed margins for sides 1–6. Lines are visual guides between sampled couplings. The additional side-7 certificate at x = 0.36 is included in the data.</figcaption></figure>
+<h2>Reproduce and inspect</h2>
+<p>The package includes C++17 transfer-matrix code, Python verification, certified input weights, coefficient tables, maximizing boundary configurations, and conservative perturbation-window calculations.</p>
+<div class="resources">
+<div class="resource"><a href="https://github.com/dsfranca/IsingBlockNumerics#quick-verification">Quick verification</a><p>Independent direct enumeration at sides 1, 2 and 3, plus zero- and small-coupling checks.</p></div>
+<div class="resource"><a href="https://github.com/dsfranca/IsingBlockNumerics/blob/main/numerical/ising_blocks/README.md">Methods &amp; full reproduction</a><p>Transfer recurrences, arithmetic assumptions, CSV conventions, and commands for all supplied searches.</p></div>
+<div class="resource"><a href="https://github.com/dsfranca/IsingBlockNumerics/tree/main/numerical/ising_blocks">Certified data</a><p>Outward-rounded influence and margin bounds, boundary maximizers, and additional sides 7 and 8.</p></div>
+<div class="resource"><a href="output/pdf/certification_note.pdf">Technical derivations</a><p>The finite-block proof, roundoff analysis, and explicit conservative shell estimates.</p></div>
+</div>
+<p class="small" style="margin-top:22px">Full searches grow rapidly with block size. The reference tables use IEEE binary64 arithmetic in round-to-nearest mode without reassociation or fused contraction. The README documents the numerical certificate and its assumptions.</p>
+<h2 id="cite">Citation</h2>
+<div class="citation">Cambyse Rouzé and Daniel Stilck França. <em>IsingBlockNumerics: Certified finite-block influences for the square-lattice Ising model.</em> Version 1.0.0 (2026).</div>
+<p><a href="https://github.com/dsfranca/IsingBlockNumerics/releases">Versioned release</a> · <a href="https://github.com/dsfranca/IsingBlockNumerics/blob/main/CITATION.cff">Machine-readable citation</a></p>
+<h2>Authors</h2>
+<p><strong>Cambyse Rouzé</strong><br>Inria, Télécom Paris, LTCI, Institut Polytechnique de Paris, Palaiseau, France.</p>
+<p><strong>Daniel Stilck França</strong><br>Department of Mathematical Sciences, University of Copenhagen, Denmark.</p>
+<footer>Numerical supplement to <em>Rapid mixing of Gibbs samplers via quantum Dobrushin–Shlosman conditions</em>. <a href="https://github.com/dsfranca/IsingBlockNumerics">Source repository</a>. Code: MIT. Data, figures &amp; documentation: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</footer>
+</main>
+</body>
+</html>

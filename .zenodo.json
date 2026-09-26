@@ -1,0 +1,26 @@
+{
+  "title": "IsingBlockNumerics: Certified finite-block influences for the square-lattice Ising model",
+  "upload_type": "software",
+  "publication_date": "2026-09-26",
+  "version": "1.0.0",
+  "description": "<p>Reproducibility package for the Ising block-dynamics example in <em>Rapid mixing of Gibbs samplers via quantum Dobrushin–Shlosman conditions</em>, by Cambyse Rouzé and Daniel Stilck França.</p><p>An exhaustive transfer-matrix calculation with explicit roundoff bounds certifies positive Dobrushin–Shlosman margins for 6 × 6 blocks at βJ = 0.35 and 7 × 7 blocks at βJ = 0.36, while the single-site condition fails at both couplings. The package includes C++ and Python source, certified input weights, full coefficient tables and maximizing boundaries, independent small-block checks, plots, technical derivations, and conservative explicit perturbation-window calculations. These finite-block numerical certificates supply the classical reference for the quantum perturbation theorem in the companion manuscript.</p><p>The Python and C++ source code is licensed under MIT. Data, figures, and documentation are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0), as specified in LICENSE-DATA.md.</p>",
+  "creators": [
+    {
+      "name": "Rouzé, Cambyse",
+      "affiliation": "Inria, Télécom Paris, LTCI, Institut Polytechnique de Paris, Palaiseau, France"
+    },
+    {
+      "name": "França, Daniel Stilck",
+      "affiliation": "Department of Mathematical Sciences, University of Copenhagen, Denmark"
+    }
+  ],
+  "keywords": [
+    "Ising model",
+    "block dynamics",
+    "Dobrushin–Shlosman condition",
+    "rapid mixing",
+    "reproducible numerics",
+    "quantum Gibbs sampling"
+  ],
+  "license": "MIT"
+}

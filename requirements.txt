@@ -1,0 +1,2 @@
+# Only the independent direct-enumeration verifier requires NumPy.
+numpy>=1.24
