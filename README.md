@@ -1,5 +1,7 @@
 # IsingBlockNumerics
 
+[Project page](https://danielstilckfranca.eu/IsingBlockNumerics/) · [Release 1.0.0](https://github.com/dsfranca/IsingBlockNumerics/releases/tag/v1.0.0)
+
 Reproducibility package for the square-lattice Ising block-dynamics example in **Rapid mixing of Gibbs samplers via quantum Dobrushin–Shlosman conditions**, by Cambyse Rouzé and Daniel Stilck França.
 
 The code exhaustively computes finite-block boundary influences for the ferromagnetic Ising model at zero longitudinal field. It provides two certified positive Dobrushin–Shlosman block margins at couplings where the single-site condition fails:
@@ -57,6 +59,8 @@ pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf ce
 ```
 
 ## Citation
+
+Cambyse Rouzé and Daniel Stilck França. **IsingBlockNumerics: Certified finite-block influences for the square-lattice Ising model.** Version 1.0.0 (2026). [Versioned release](https://github.com/dsfranca/IsingBlockNumerics/releases/tag/v1.0.0).
 
 Citation metadata for this package is provided in [CITATION.cff](CITATION.cff). Please cite the archived release when using the code or numerical certificates; the repository describes the evolving source, whereas the archive preserves the version used in the paper.
 

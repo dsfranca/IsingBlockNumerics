@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this package or its numerical certificates, please cite the archived release."
 type: software
 repository-code: "https://github.com/dsfranca/IsingBlockNumerics"
-url: "https://dsfranca.github.io/IsingBlockNumerics/"
+url: "https://danielstilckfranca.eu/IsingBlockNumerics/"
 title: "IsingBlockNumerics: Certified finite-block influences for the square-lattice Ising model"
 authors:
   - family-names: Rouzé
